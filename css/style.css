@@ -1,8 +1,68 @@
-/* 下拉選單預設隱藏 */
+/* =========================================
+   1. 基本重置與字體設定
+========================================= */
+body {
+    font-family: 'Helvetica Neue', Arial, 'LiHei Pro', '微軟正黑體', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f2f2f2; /* 淺灰背景，讓白色內容區塊更明顯 */
+}
+
+/* =========================================
+   2. 網站頂部標題區塊
+========================================= */
+header {
+    background-color: #f6b216; /* 主視覺：黃色 */
+    color: white;
+    text-align: center;
+}
+
+.header-container h1 {
+    margin: 0;
+    padding: 30px 0;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   3. 主選單導覽列設計
+========================================= */
+.main-nav {
+    background-color: #b8860b; /* 主視覺：深黃/棕色 */
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav li {
+    position: relative;
+}
+
+.main-nav a {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.main-nav a:hover {
+    background-color: #996e09; /* 滑鼠懸停時的顏色 */
+}
+
+/* =========================================
+   4. 下拉式選單設計 (研究成果)
+========================================= */
 .dropdown-content {
-    display: none; /* 這行是關鍵，預設先把它隱藏起來 */
+    display: none; /* 預設隱藏 */
     position: absolute;
-    background-color: #e69d73; /* 配合你截圖的粉橘色 */
+    background-color: #e69d73; /* 配合截圖的粉橘色 */
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 10;
@@ -13,19 +73,130 @@
     margin: 0;
 }
 
-/* 當游標移到「研究成果」上時，才顯示下拉選單 */
+/* 當游標移到有 .dropdown 的 <li> 上時，顯示下拉選單 */
 .dropdown:hover .dropdown-content {
-    display: flex; /* 游標懸停時變成顯示 */
+    display: flex; 
 }
 
-/* 下拉選單內部的連結設計 */
 .dropdown-content a {
     color: white;
     padding: 12px 16px;
     text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2); /* 選項之間的分隔線 */
 }
 
 .dropdown-content a:hover {
-    background-color: #d48b61; /* 滑鼠移到選項上時顏色變深 */
+    background-color: #d48b61; /* 滑鼠懸停時選項顏色變深 */
+}
+
+/* =========================================
+   5. 主要版面配置容器
+========================================= */
+.container {
+    max-width: 1000px; /* 限制總寬度讓版面集中 */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   6. 首頁：卡片網格排版 (兩欄式)
+========================================= */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 兩等分 */
+    gap: 30px; /* 卡片之間的間距 */
+}
+
+/* 單一卡片設計 */
+.card {
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 圖片預留區塊 */
+.img-placeholder {
+    width: 100%;
+    height: 250px;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* 卡片標題與下方虛線 */
+.card-title {
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: #444;
+    margin: 10px 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 2px dotted #d17a52; /* 橘色虛線 */
+    width: 80%;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.card-title a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 無圖片卡片的排版調整 (合作單位、最新消息) */
+.text-only-card {
+    justify-content: center;
+    min-height: 250px;
+}
+
+/* 首頁卡片的「更多」按鈕 */
+.btn-more {
+    margin-top: auto;
+    padding: 10px 40px;
+    border: 1px solid #ddd;
+    background-color: white;
+    color: #666;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-more:hover {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+}
+
+/* =========================================
+   7. 內頁：專用白色內容區塊 
+   (應用於最新消息、研究領域、研究成果等頁面)
+========================================= */
+.page-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    min-height: 500px; /* 確保內容太少時，網頁底部不會縮上去 */
+}
+
+.page-box h2 {
+    border-bottom: 2px solid #f6b216; /* 標題下方的黃色底線 */
+    padding-bottom: 10px;
+    color: #333;
+    margin-top: 0;
+}
+
+/* =========================================
+   8. 頁尾設計
+========================================= */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #333;
+    color: white;
+    margin-top: 50px;
 }
