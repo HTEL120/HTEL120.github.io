@@ -89,6 +89,15 @@ header {
     background-color: #d48b61; /* 滑鼠懸停時選項顏色變深 */
 }
 
+<li class="dropdown">
+    <a href="journals.html">研究成果</a>
+    
+    <ul class="dropdown-content">
+        <li><a href="journals.html">期刊論文</a></li>
+        <li><a href="conferences.html">會議論文</a></li>
+        </ul>
+</li>
+
 /* =========================================
    5. 主要版面配置容器
 ========================================= */
