@@ -4,75 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>合作單位 - 熱傳增強實驗室</title>
-    <style>
-        /* 基礎樣式與導覽列 */
-        body { font-family: "Microsoft JhengHei", sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; background-color: #fdfdfd; }
-        header { background-color: #fca311; padding: 30px; text-align: center; color: white; }
-        nav { background-color: #b0891d; position: sticky; top: 0; z-index: 1000; }
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; }
-        nav ul li a { display: block; padding: 15px 20px; color: white; text-decoration: none; font-weight: bold; }
-        nav ul li a:hover { background-color: #d4a373; }
-        
-        /* 內容容器 */
-        main { max-width: 900px; margin: 40px auto; padding: 0 20px; min-height: 600px; }
-        h2 { border-left: 5px solid #fca311; padding-left: 15px; color: #b0891d; margin-bottom: 30px; }
-        
-        /* 合作單位清單樣式 */
-        .partner-section { margin-bottom: 40px; }
-        .partner-category { color: #fca311; font-weight: bold; border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 15px; }
-        .partner-list { display: flex; flex-wrap: wrap; gap: 20px; list-style: none; padding: 0; }
-        .partner-card { background: white; border: 1px solid #eee; padding: 20px; border-radius: 8px; width: calc(33.333% - 20px); box-sizing: border-box; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .partner-card:hover { transform: translateY(-5px); transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        
-        footer { text-align: center; padding: 20px; background: #f4f4f4; margin-top: 50px; }
-        
-        /* 手機版適應 */
-        @media (max-width: 768px) {
-            .partner-card { width: calc(50% - 10px); }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-<header>
-    <h1>熱傳增強實驗室</h1>
-    <p>Heat Transfer Enhancement Laboratory</p>
-</header>
-
-<nav>
-    <ul>
-        <li><a href="index.html">首頁</a></li>
-        <li><a href="news.html">最新消息</a></li>
-        <li><a href="partners.html">合作單位</a></li>
-        <li><a href="research.html">研究領域</a></li>
-        <li><a href="journals.html">研究成果</a></li>
-    </ul>
-</nav>
-
-<main>
-    <h2>合作單位</h2>
-
-    <div class="partner-section">
-        <div class="partner-category">學術機構</div>
-        <ul class="partner-list">
-            <li class="partner-card">國立中央大學<br>機械工程學系</li>
-            <li class="partner-card">熱管理技術研究中心</li>
+    <header>
+        <div class="header-container">
+            <h1>熱傳增強實驗室</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="news.html">最新消息</a></li>
+                <li><a href="partners.html">合作單位</a></li>
+                <li><a href="research.html">研究領域</a></li>
+                <li class="dropdown">
+                    <a href="achievements/journals.html">研究成果</a>
+                    <ul class="dropdown-content">
+                        <li><a href="achievements/journals.html">期刊論文</a></li>
+                        <li><a href="achievements/conferences.html">會議論文</a></li>
+                        <li><a href="achievements/theses.html">學位論文</a></li>
+                        <li><a href="achievements/patents.html">專利及其他</a></li>
+                        <li><a href="achievements/tech.html">技術轉移</a></li>
+                    </ul>
+                </li>
             </ul>
-    </div>
+        </nav>
+    </header>
 
-    <div class="partner-section">
-        <div class="partner-category">企業夥伴 / 產學合作</div>
-        <ul class="partner-list">
-            <li class="partner-card">合作企業 A</li>
-            <li class="partner-card">合作企業 B</li>
-            <li class="partner-card">研發機構 C</li>
-        </ul>
-    </div>
-</main>
+    <main class="container">
+        <div class="page-box">
+            <h2>合作單位</h2>
+            <ul>
+                <li>單位名稱建置中...</li>
+                <li>單位名稱建置中...</li>
+            </ul>
+        </div>
+    </main>
 
-<footer>
-    &copy; 2026 熱傳增強實驗室 - 國立中央大學 機械工程學系
-</footer>
-
+    <footer>
+        <p>&copy; 2026 熱傳增強實驗室 All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
