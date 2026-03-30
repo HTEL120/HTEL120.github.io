@@ -2,7 +2,7 @@
    1. 基本重置與字體設定
 ========================================= */
 body {
-    font-family: 'Helvetica Neue', Arial, 'LiHei Pro', '微軟正黑體', sans-serif;
+    font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
