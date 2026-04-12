@@ -1,5 +1,5 @@
 /* =========================================
-   1. 基本重置與字體設定
+   基本重置與字體設定
 ========================================= */
 body {
     font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
@@ -10,7 +10,7 @@ body {
 }
 
 /* =========================================
-   2. 網站頂部標題區塊
+   網站頂部標題區塊
 ========================================= */
 header {
     background-color: #f6b216; /* 主視覺：黃色 */
@@ -26,7 +26,7 @@ header {
 }
 
 /* =========================================
-   3. 主選單導覽列設計
+   主選單導覽列設計
 ========================================= */
 .main-nav {
     background-color: #b8860b; /* 主視覺：深黃/棕色 */
@@ -59,7 +59,7 @@ header {
 }
 
 /* =========================================
-   4. 下拉式選單設計 (研究成果)
+   下拉式選單設計 (研究成果)
 ========================================= */
 .dropdown-content {
     display: none; /* 預設隱藏 (現在不會被吃掉了) */
@@ -95,7 +95,7 @@ header {
 }
 
 /* =========================================
-   5. 主要版面配置容器
+   主要版面配置容器
 ========================================= */
 .container {
     max-width: 1000px; /* 限制總寬度讓版面集中 */
@@ -104,7 +104,7 @@ header {
 }
 
 /* =========================================
-   6. 首頁：卡片網格排版 (兩欄式)
+   首頁：卡片網格排版 (兩欄式)
 ========================================= */
 .card-grid {
     display: grid;
@@ -177,7 +177,7 @@ header {
 }
 
 /* =========================================
-   7. 內頁：專用白色內容區塊 
+   內頁：專用白色內容區塊 
    (應用於最新消息、研究領域、研究成果等頁面)
 ========================================= */
 .page-box {
@@ -196,7 +196,7 @@ header {
 }
 
 /* =========================================
-   8. 頁尾設計
+   頁尾設計
 ========================================= */
 footer {
     text-align: center;
@@ -204,4 +204,109 @@ footer {
     background-color: #333;
     color: white;
     margin-top: 50px;
+}
+
+/* =========================================
+   成員頁面專屬樣式 (members.html)
+========================================= */
+.member-section h3 {
+    color: #b8860b;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border-left: 5px solid #b8860b;
+}
+
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.member-item {
+    text-align: center;
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #eee;
+    transition: transform 0.2s;
+}
+
+.member-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.member-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.member-info {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 0;
+}
+
+/* =========================================
+   合作單位頁面圖文排版 (partners.html)
+========================================= */
+.partner-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.partner-card {
+    display: flex;
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.partner-card:last-child {
+    border-bottom: none;
+}
+
+.partner-logo {
+    width: 280px;
+    flex-shrink: 0;
+    text-align: center;
+    margin-right: 40px;
+}
+
+.partner-logo img {
+    max-width: 100%;
+    max-height: 90px;
+    object-fit: contain;
+}
+
+.partner-info h3 {
+    margin: 0 0 10px 0;
+    color: #555;
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+.partner-info a {
+    color: #e69d73;
+    text-decoration: none;
+    font-size: 0.95rem;
+    word-break: break-all;
+}
+
+.partner-info a:hover {
+    text-decoration: underline;
+    color: #d48b61;
+}
+
+/* 手機版排版調整 */
+@media (max-width: 768px) {
+    .partner-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .partner-logo {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
 }
