@@ -33,11 +33,29 @@
 
     <main class="container">
         <div class="page-box">
+            太棒了！看來你已經成功把圖片拖曳進來準備上傳了。
+
+請直接點擊左下角綠色的 **「Commit changes」** 按鈕完成上傳。
+
+### ⚠️ 重要提醒：檔名與副檔名必須完全一致
+
+我注意到你上傳的檔案名稱跟我們剛剛在 HTML 裡寫的預設檔名有一點點不一樣（這非常重要，因為網頁對大小寫和副檔名是很敏感的，只要差一個字圖片就會顯示不出來！）。
+
+你實際的檔名是：
+* `delta_logo.png` (副檔名是 .png)
+* `kaori.svg` (副檔名是 .svg)
+* `NSTC.jpg` (英文字母是大寫)
+
+因此，我們需要把你 `partners.html` 裡面的圖片路徑更新成跟你上傳的一模一樣。
+
+請將你 `partners.html` 中，合作單位列表那一段的程式碼，替換成下面這段精準對應檔名的版本（假設你確實是上傳到 `images` 資料夾內）：
+
+```html
             <div class="partner-list">
                 
                 <div class="partner-card">
                     <div class="partner-logo">
-                        <img src="images/kaori.jpg" alt="高力熱處理 Logo">
+                        <img src="images/kaori.svg" alt="高力熱處理 Logo">
                     </div>
                     <div class="partner-info">
                         <h3>高力熱處理股份有限公司</h3>
@@ -47,7 +65,7 @@
 
                 <div class="partner-card">
                     <div class="partner-logo">
-                        <img src="images/delta.jpg" alt="台達電子 Logo">
+                        <img src="images/delta_logo.png" alt="台達電子 Logo">
                     </div>
                     <div class="partner-info">
                         <h3>台達電子工業股份有限公司</h3>
@@ -57,7 +75,7 @@
 
                 <div class="partner-card">
                     <div class="partner-logo">
-                        <img src="images/nstc.jpg" alt="國科會 Logo">
+                        <img src="images/NSTC.jpg" alt="國科會 Logo">
                     </div>
                     <div class="partner-info">
                         <h3>國家科學及技術委員會</h3>
@@ -66,6 +84,9 @@
                 </div>
 
             </div>
+```
+
+更改完畢並推送到 GitHub 後，記得重新整理網頁，你就會看到這些合作單位的漂亮 Logo 出現了！
         </div>
     </main>
 
