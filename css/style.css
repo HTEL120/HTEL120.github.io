@@ -6,18 +6,33 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #f4f6f9; /* 柔和的淺灰藍背景，提升質感 */
+    background-color: #f1f5f9; /* 更清爽的淺灰藍背景 */
     color: #334155;
 }
 
 /* =========================================
-   網站頂部標題區塊
+   網站頂部標題區塊 (改為現代感漸層藍)
 ========================================= */
 header {
-    background-color: #003060; /* 學術海軍藍 */
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
     color: white;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 幫 header 加上一點微秒的斜線幾何裝飾，打破單調 */
+header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 40%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.05);
+    transform: rotate(30deg);
+    pointer-events: none;
 }
 
 .header-container h1 {
@@ -26,13 +41,14 @@ header {
     font-size: 2.2rem;
     letter-spacing: 3px;
     font-weight: 600;
+    text-shadow: 1px 2px 4px rgba(0,0,0,0.2); /* 讓白字在漸層上更清晰 */
 }
 
 /* =========================================
    主選單導覽列設計
 ========================================= */
 .main-nav {
-    background-color: #002244; /* 加深底色做出層次 */
+    background-color: #172554; /* 較深的夜空藍，用來壓住漸層的輕浮感 */
 }
 
 .main-nav > ul {
@@ -54,11 +70,12 @@ header {
     text-decoration: none;
     font-size: 1.05rem;
     font-weight: 500;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .main-nav > ul > li > a:hover {
-    background-color: #004080; /* 懸停時提亮 */
+    background-color: #1e3a8a; 
+    color: #fbbf24; /* 懸停時出現帶有熱傳意象的暖黃色 */
 }
 
 /* =========================================
@@ -67,10 +84,10 @@ header {
 .dropdown-content {
     display: none; 
     position: absolute;
-    background-color: #ffffff; /* 改為專業的白底 */
+    background-color: #ffffff; 
     min-width: 180px;
     box-shadow: 0px 8px 20px rgba(0,0,0,0.12);
-    border-top: 3px solid #00509e; /* 頂部藍色裝飾線 */
+    border-top: 3px solid #fbbf24; /* 頂部改為暖黃橘色裝飾線 */
     z-index: 10;
     flex-direction: column;
     top: 100%; 
@@ -88,7 +105,7 @@ header {
 
 .dropdown-content a {
     display: block; 
-    color: #334155; /* 深灰字體 */
+    color: #475569; 
     padding: 14px 20px;
     text-align: left;
     text-decoration: none; 
@@ -98,9 +115,9 @@ header {
 }
 
 .dropdown-content a:hover {
-    background-color: #f4f6f9; 
-    color: #00509e; /* 懸停時字體變藍 */
-    padding-left: 24px; /* 懸停時的小位移動畫 */
+    background-color: #f0f9ff; /* 懸停時變為極淺的藍色 */
+    color: #2563eb; 
+    padding-left: 24px; 
 }
 
 /* =========================================
@@ -125,18 +142,19 @@ header {
 .card {
     background-color: white;
     padding: 35px;
-    border-radius: 10px; /* 圓角 */
+    border-radius: 12px; 
     border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 加入滑順動畫 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
 }
 
 .card:hover {
-    transform: translateY(-5px); /* 懸停浮起 */
-    box-shadow: 0 12px 20px -5px rgba(0,0,0,0.1);
+    transform: translateY(-5px); 
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.1); /* 懸停時帶有淡淡的藍色光暈 */
+    border-color: #bfdbfe;
 }
 
 /* 卡片標題 */
@@ -152,13 +170,13 @@ header {
     position: relative;
 }
 
-/* 替換原本的虛線：改用專業的短實線點綴 */
+/* 標題下方的點綴線，改為漸層橘/熱傳感 */
 .card-title::after {
     content: "";
     display: block;
-    width: 50px;
-    height: 3px;
-    background-color: #00509e;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #f59e0b, #ea580c);
     margin: 15px auto 0;
     border-radius: 2px;
 }
@@ -170,7 +188,7 @@ header {
 }
 
 .card-title a:hover {
-    color: #00509e;
+    color: #2563eb;
 }
 
 /* 無圖片卡片的排版調整 */
@@ -183,20 +201,21 @@ header {
 .btn-more {
     margin-top: auto;
     padding: 10px 35px;
-    background-color: #f8fafc;
-    color: #00509e;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
+    background-color: #ffffff;
+    color: #2563eb;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
     text-decoration: none;
     font-size: 0.95rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-more:hover {
-    background-color: #00509e;
+    background-color: #2563eb;
     color: white;
-    border-color: #00509e;
+    border-color: #2563eb;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
 }
 
 /* =========================================
@@ -205,9 +224,9 @@ header {
 .page-box {
     background-color: white;
     padding: 50px;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
     min-height: 500px; 
 }
 
@@ -216,29 +235,38 @@ header {
     margin-top: 0;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #e2e8f0; 
+    border-bottom: 2px solid #f1f5f9; 
     position: relative;
 }
 
-/* 標題左側加入經典藍色飾條 */
+/* 內頁標題左側加入經典藍橘雙色飾條 */
 .page-box h2::before {
     content: "";
     position: absolute;
     bottom: -2px;
     left: 0;
-    width: 80px;
-    height: 2px;
-    background-color: #00509e;
+    width: 60px;
+    height: 3px;
+    background-color: #2563eb;
+}
+.page-box h2::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 60px;
+    width: 30px;
+    height: 3px;
+    background-color: #f59e0b;
 }
 
 /* =========================================
    成員頁面專屬樣式 (members.html)
 ========================================= */
 .member-section h3 {
-    color: #004080;
+    color: #1e40af;
     margin-bottom: 25px;
     padding-left: 12px;
-    border-left: 4px solid #00509e;
+    border-left: 5px solid #2563eb;
     font-size: 1.3rem;
 }
 
@@ -252,15 +280,16 @@ header {
     text-align: center;
     background: #f8fafc;
     padding: 20px 15px;
-    border-radius: 8px;
+    border-radius: 10px;
     border: 1px solid #e2e8f0;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .member-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
-    border-color: #cbd5e1;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+    border-color: #93c5fd;
+    background: #ffffff;
 }
 
 .member-name {
@@ -295,16 +324,21 @@ header {
     flex-shrink: 0;
     text-align: center;
     margin-right: 50px;
-    padding: 10px;
-    background: #fff;
-    border-radius: 8px;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #f1f5f9;
+    transition: transform 0.2s ease;
+}
+
+.partner-logo:hover {
+    transform: scale(1.02);
 }
 
 .partner-logo img {
     max-width: 100%;
     max-height: 80px;
     object-fit: contain;
-    filter: grayscale(10%) contrast(1.1); /* 微調 Logo 質感 */
 }
 
 .partner-info h3 {
@@ -315,7 +349,7 @@ header {
 }
 
 .partner-info a {
-    color: #00509e;
+    color: #2563eb;
     text-decoration: none;
     font-size: 0.95rem;
     word-break: break-all;
@@ -324,7 +358,7 @@ header {
 
 .partner-info a:hover {
     text-decoration: underline;
-    color: #003366;
+    color: #1e40af;
 }
 
 /* 手機版排版調整 */
@@ -347,9 +381,9 @@ header {
 ========================================= */
 footer {
     text-align: center;
-    padding: 30px;
-    background-color: #1e293b;
-    color: #cbd5e1;
+    padding: 35px 20px;
+    background-color: #0f172a; /* 深岩灰，比純黑更有質感 */
+    color: #94a3b8;
     margin-top: 60px;
     font-size: 0.9rem;
     letter-spacing: 1px;
