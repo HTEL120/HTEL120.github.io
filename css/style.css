@@ -2,37 +2,39 @@
    基本重置與字體設定
 ========================================= */
 body {
-    font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
+    font-family: "Noto Sans TC", "微軟正黑體", -apple-system, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #f2f2f2; /* 淺灰背景，讓白色內容區塊更明顯 */
+    background-color: #f4f6f9; /* 柔和的淺灰藍背景，提升質感 */
+    color: #334155;
 }
 
 /* =========================================
    網站頂部標題區塊
 ========================================= */
 header {
-    background-color: #f6b216; /* 主視覺：黃色 */
+    background-color: #003060; /* 學術海軍藍 */
     color: white;
     text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .header-container h1 {
     margin: 0;
-    padding: 30px 0;
-    font-size: 2rem;
-    letter-spacing: 2px;
+    padding: 35px 0;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    font-weight: 600;
 }
 
 /* =========================================
    主選單導覽列設計
 ========================================= */
 .main-nav {
-    background-color: #b8860b; /* 主視覺：深黃/棕色 */
+    background-color: #002244; /* 加深底色做出層次 */
 }
 
-/* 加上 > 符號，確保 display: flex 只作用於外層的主選單 */
 .main-nav > ul {
     list-style: none;
     margin: 0;
@@ -45,61 +47,68 @@ header {
     position: relative;
 }
 
-/* 加上 > 符號，只設定外層主選單連結的樣式 */
 .main-nav > ul > li > a {
     display: block;
-    padding: 15px 25px;
-    color: white;
+    padding: 16px 28px;
+    color: #f8fafc;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
 }
 
 .main-nav > ul > li > a:hover {
-    background-color: #996e09; /* 滑鼠懸停時的顏色 */
+    background-color: #004080; /* 懸停時提亮 */
 }
 
 /* =========================================
    下拉式選單設計 (研究成果)
 ========================================= */
 .dropdown-content {
-    display: none; /* 預設隱藏 (現在不會被吃掉了) */
+    display: none; 
     position: absolute;
-    background-color: #e69d73; /* 配合截圖的粉橘色 */
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #ffffff; /* 改為專業的白底 */
+    min-width: 180px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.12);
+    border-top: 3px solid #00509e; /* 頂部藍色裝飾線 */
     z-index: 10;
     flex-direction: column;
     top: 100%; 
     left: 0;
     padding: 0;
     margin: 0;
-    list-style: none; /* 確保下拉選單沒有黑點 */
+    list-style: none;
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
 }
 
-/* 當游標移到有 .dropdown 的 <li> 上時，顯示下拉選單 */
 .dropdown:hover .dropdown-content {
     display: flex; 
 }
 
 .dropdown-content a {
-    display: block; /* 確保每個選項獨立一行並填滿寬度 */
-    color: white;
-    padding: 12px 16px;
-    text-align: center;
-    text-decoration: none; /* 移除預設底線 */
-    border-bottom: 1px solid rgba(255,255,255,0.2); /* 選項之間的分隔線 */
+    display: block; 
+    color: #334155; /* 深灰字體 */
+    padding: 14px 20px;
+    text-align: left;
+    text-decoration: none; 
+    border-bottom: 1px solid #f1f5f9; 
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
 }
 
 .dropdown-content a:hover {
-    background-color: #d48b61; /* 滑鼠懸停時選項顏色變深 */
+    background-color: #f4f6f9; 
+    color: #00509e; /* 懸停時字體變藍 */
+    padding-left: 24px; /* 懸停時的小位移動畫 */
 }
 
 /* =========================================
    主要版面配置容器
 ========================================= */
 .container {
-    max-width: 1000px; /* 限制總寬度讓版面集中 */
-    margin: 40px auto;
+    max-width: 1050px; 
+    margin: 50px auto;
     padding: 0 20px;
 }
 
@@ -108,143 +117,157 @@ header {
 ========================================= */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 兩等分 */
-    gap: 30px; /* 卡片之間的間距 */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 35px; 
 }
 
 /* 單一卡片設計 */
 .card {
     background-color: white;
-    padding: 30px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding: 35px;
+    border-radius: 10px; /* 圓角 */
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 加入滑順動畫 */
 }
 
-/* 圖片預留區塊 */
-.img-placeholder {
-    width: 100%;
-    height: 250px;
-    background-color: #e9ecef;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #999;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+.card:hover {
+    transform: translateY(-5px); /* 懸停浮起 */
+    box-shadow: 0 12px 20px -5px rgba(0,0,0,0.1);
 }
 
-/* 卡片標題與下方虛線 */
+/* 卡片標題 */
 .card-title {
-    font-size: 1.6rem;
-    font-weight: normal;
-    color: #444;
-    margin: 10px 0 20px 0;
-    padding-bottom: 15px;
-    border-bottom: 2px dotted #d17a52; /* 橘色虛線 */
-    width: 80%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 10px 0 25px 0;
+    padding-bottom: 0;
+    width: 100%;
     text-align: center;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* 替換原本的虛線：改用專業的短實線點綴 */
+.card-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #00509e;
+    margin: 15px auto 0;
+    border-radius: 2px;
 }
 
 .card-title a {
     text-decoration: none;
     color: inherit;
+    transition: color 0.2s ease;
 }
 
-/* 無圖片卡片的排版調整 (合作單位、最新消息) */
+.card-title a:hover {
+    color: #00509e;
+}
+
+/* 無圖片卡片的排版調整 */
 .text-only-card {
     justify-content: center;
-    min-height: 250px;
+    min-height: 260px;
 }
 
-/* 首頁卡片的「更多」按鈕 */
+/* 按鈕全面升級 */
 .btn-more {
     margin-top: auto;
-    padding: 10px 40px;
-    border: 1px solid #ddd;
-    background-color: white;
-    color: #666;
+    padding: 10px 35px;
+    background-color: #f8fafc;
+    color: #00509e;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
     transition: all 0.3s ease;
 }
 
 .btn-more:hover {
-    background-color: #f5f5f5;
-    border-color: #ccc;
+    background-color: #00509e;
+    color: white;
+    border-color: #00509e;
 }
 
 /* =========================================
    內頁：專用白色內容區塊 
-   (應用於最新消息、研究領域、研究成果等頁面)
 ========================================= */
 .page-box {
     background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    min-height: 500px; /* 確保內容太少時，網頁底部不會縮上去 */
+    padding: 50px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    min-height: 500px; 
 }
 
 .page-box h2 {
-    border-bottom: 2px solid #f6b216; /* 標題下方的黃色底線 */
-    padding-bottom: 10px;
-    color: #333;
+    color: #1e293b;
     margin-top: 0;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e2e8f0; 
+    position: relative;
 }
 
-/* =========================================
-   頁尾設計
-========================================= */
-footer {
-    text-align: center;
-    padding: 25px;
-    background-color: #333;
-    color: white;
-    margin-top: 50px;
+/* 標題左側加入經典藍色飾條 */
+.page-box h2::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background-color: #00509e;
 }
 
 /* =========================================
    成員頁面專屬樣式 (members.html)
 ========================================= */
 .member-section h3 {
-    color: #b8860b;
-    margin-bottom: 20px;
-    padding-left: 10px;
-    border-left: 5px solid #b8860b;
+    color: #004080;
+    margin-bottom: 25px;
+    padding-left: 12px;
+    border-left: 4px solid #00509e;
+    font-size: 1.3rem;
 }
 
 .member-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 20px;
 }
 
 .member-item {
     text-align: center;
-    background: #fff;
-    padding: 15px;
-    border: 1px solid #eee;
-    transition: transform 0.2s;
+    background: #f8fafc;
+    padding: 20px 15px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
 }
 
 .member-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    border-color: #cbd5e1;
 }
 
 .member-name {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.member-info {
-    font-size: 0.9rem;
-    color: #777;
+    font-weight: 600;
     margin: 0;
+    color: #334155;
+    font-size: 1.1rem;
 }
 
 /* =========================================
@@ -253,14 +276,14 @@ footer {
 .partner-list {
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .partner-card {
     display: flex;
     align-items: center;
-    padding: 25px 0;
-    border-bottom: 1px solid #e0e0e0;
+    padding: 30px 0;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .partner-card:last-child {
@@ -268,45 +291,66 @@ footer {
 }
 
 .partner-logo {
-    width: 280px;
+    width: 250px;
     flex-shrink: 0;
     text-align: center;
-    margin-right: 40px;
+    margin-right: 50px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
 }
 
 .partner-logo img {
     max-width: 100%;
-    max-height: 90px;
+    max-height: 80px;
     object-fit: contain;
+    filter: grayscale(10%) contrast(1.1); /* 微調 Logo 質感 */
 }
 
 .partner-info h3 {
-    margin: 0 0 10px 0;
-    color: #555;
-    font-size: 1.1rem;
-    font-weight: normal;
+    margin: 0 0 8px 0;
+    color: #1e293b;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .partner-info a {
-    color: #e69d73;
+    color: #00509e;
     text-decoration: none;
     font-size: 0.95rem;
     word-break: break-all;
+    transition: color 0.2s ease;
 }
 
 .partner-info a:hover {
     text-decoration: underline;
-    color: #d48b61;
+    color: #003366;
 }
 
 /* 手機版排版調整 */
 @media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
     .partner-card {
         flex-direction: column;
         text-align: center;
     }
     .partner-logo {
         margin-right: 0;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
+}
+
+/* =========================================
+   頁尾設計
+========================================= */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #1e293b;
+    color: #cbd5e1;
+    margin-top: 60px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
 }
