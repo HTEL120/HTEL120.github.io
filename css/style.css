@@ -229,7 +229,7 @@ header {
 
 .text-only-card {
     justify-content: center;
-    min-height: 160px;
+    min-height: 100px;
 }
 
 /* 按鈕全面升級：科技質感的橘紅漸層邊框 */
