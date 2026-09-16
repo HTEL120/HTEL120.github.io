@@ -317,8 +317,8 @@ header {
 
 .member-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(3, 1fr); /* 固定每一橫列顯示 3 位成員 */
+    gap: 25px; /* 每個成員方框之間的距離 */
 }
 
 .member-item {
