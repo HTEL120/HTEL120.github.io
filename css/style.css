@@ -36,7 +36,7 @@ header {
 
 .header-container h1 {
     margin: 0;
-    padding: 25px 0;
+    padding: 14px 0; /* 原本 25px，縮小標題上下空白 */
     font-size: 2.2rem;
     letter-spacing: 2px;
     font-weight: 700;
@@ -70,7 +70,7 @@ header {
 
 .main-nav > ul > li > a {
     display: block;
-    padding: 14px 24px;
+    padding: 9px 24px; /* 原本上下 14px，改成 9px；左右 24px 不變 */
     color: #475569;
     text-decoration: none;
     font-size: 1.05rem;
