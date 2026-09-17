@@ -323,34 +323,36 @@ header {
     font-size: 1.3rem;
 }
 
-.member-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 固定每一橫列顯示 3 位成員 */
-    gap: 25px; /* 每個成員方框之間的距離 */
+.member-group {
+    margin: 0 0 30px 20px; /* 博士、碩士各區塊之間的距離 */
 }
 
-.member-item {
-    text-align: center;
-    background: linear-gradient(180deg, #ffffff 0%, #fffbf9 100%);
-    padding: 25px 15px;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px rgba(15, 23, 42, 0.02);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.member-group h4 {
+    margin: 0 0 10px 0;
+    color: #475569;
+    font-size: 1.15rem;
+    font-weight: 700; /* 博士、碩士的小標題 */
 }
 
-.member-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(249, 115, 22, 0.1);
-    border-color: #fed7aa;
-    background: #ffffff;
-}
-
-.member-name {
-    font-weight: 700;
+.member-text {
     margin: 0;
     color: #1e293b;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
+    line-height: 2.2;
+    letter-spacing: 1px; /* 成員姓名改為純文字排列 */
+}
+
+.graduate-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px; /* 畢業年份與姓名之間的距離 */
+}
+
+.graduate-year {
+    color: #f97316;
+    font-weight: 700;
+    font-size: 1.05rem;
+    white-space: nowrap; /* 避免「115年」換行 */
 }
 
 /* =========================================
