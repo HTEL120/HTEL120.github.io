@@ -227,12 +227,20 @@ header {
     color: #f97316;
 }
 
+.card:not(.text-only-card) {
+    justify-content: center; /* 讓一般卡片內的文字垂直置中 */
+}
+
+.card:not(.text-only-card) .card-title {
+    margin: 0; /* 文字置中 */
+}
+
 .text-only-card {
     justify-content: center;
     min-height: 100px;
 }
 
-/* 按鈕全面升級：科技質感的橘紅漸層邊框 */
+/* 按鈕：橘紅漸層邊框 */
 .btn-more {
     margin-top: auto;
     padding: 10px 35px;
