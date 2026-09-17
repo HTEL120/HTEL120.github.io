@@ -337,21 +337,25 @@ header {
 .member-text {
     margin: 0;
     color: #1e293b;
-    font-size: 1.1rem;
-    line-height: 2.2;
-    letter-spacing: 1px; /* 成員姓名改為純文字排列 */
+    font-family: inherit; /* 使用與網站其他內文相同的字體 */
+    font-size: 1rem; /* 改成與一般內文相同大小 */
+    font-weight: 400; /* 使用一般內文字重 */
+    line-height: 1.7; /* 與 body 的行距一致 */
+    letter-spacing: 0; /* 取消額外字距，避免姓名看起來和其他文字不同 */
 }
 
 .graduate-row {
     display: flex;
-    align-items: flex-start;
+    align-items: baseline; /* 讓 115年 與姓名依文字基線對齊 */
     gap: 25px; /* 畢業年份與姓名之間的距離 */
 }
 
 .graduate-year {
     color: #f97316;
-    font-weight: 700;
-    font-size: 1.05rem;
+    font-family: inherit; /* 使用相同字體 */
+    font-weight: 700; /* 年份保留粗體，方便辨識 */
+    font-size: 1rem; /* 與姓名使用相同字級 */
+    line-height: 1.7; /* 與姓名使用相同行距 */
     white-space: nowrap; /* 避免「115年」換行 */
 }
 
