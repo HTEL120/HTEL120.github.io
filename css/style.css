@@ -50,11 +50,6 @@ header {
 /* =========================================
    主選單導覽列設計
 ========================================= */
-.main-nav {
-    background-color: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
-}
-
 .main-nav > ul {
     list-style: none;
     margin: 0;
@@ -322,14 +317,9 @@ header {
 
 .news-item {
     display: flex;
-    align-items: center;
-    padding: 22px 10px; /* 每則消息上下留白 */
-    border-bottom: 1px solid #e2e8f0; /* 每則消息之間的分隔線 */
-    transition: all 0.3s ease;
-}
-
-.news-item:first-child {
-    border-top: 1px solid #e2e8f0; /* 第一則消息上方也加分隔線 */
+    flex-direction: column; /* 日期與內文上下排列 */
+    align-items: flex-start; /* 日期與內文靠左對齊 */
+    padding: 18px 10px; /* 每則消息上下保留一些空間 */
 }
 
 .news-item:hover {
