@@ -313,6 +313,45 @@ header {
 }
 
 /* =========================================
+   最新消息頁面
+========================================= */
+.news-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-item {
+    display: flex;
+    align-items: center;
+    padding: 22px 10px; /* 每則消息上下留白 */
+    border-bottom: 1px solid #e2e8f0; /* 每則消息之間的分隔線 */
+    transition: all 0.3s ease;
+}
+
+.news-item:first-child {
+    border-top: 1px solid #e2e8f0; /* 第一則消息上方也加分隔線 */
+}
+
+.news-item:hover {
+    background-color: #fff7ed; /* 滑鼠移上去時顯示淡橘色背景 */
+    padding-left: 18px; /* 滑鼠移上去時稍微向右移 */
+}
+
+.news-date {
+    width: 130px;
+    flex-shrink: 0; /* 固定日期區域寬度，讓每則消息整齊對齊 */
+    color: #f97316;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.news-title {
+    color: #334155;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+/* =========================================
    成員頁面專屬樣式
 ========================================= */
 .member-section h3 {
