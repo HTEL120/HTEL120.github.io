@@ -322,11 +322,6 @@ header {
     padding: 18px 10px; /* 每則消息上下保留一些空間 */
 }
 
-.news-item:hover {
-    background-color: #fff7ed; /* 滑鼠移上去時顯示淡橘色背景 */
-    padding-left: 18px; /* 滑鼠移上去時稍微向右移 */
-}
-
 .news-date {
     width: 130px;
     flex-shrink: 0; /* 固定日期區域寬度，讓每則消息整齊對齊 */
