@@ -146,62 +146,6 @@ header {
 }
 
 /* =========================================
-   首頁大型橫幅
-========================================= */
-.hero-banner {
-    position: relative; /* 讓文字與遮罩可以疊在圖片上 */
-    width: 100%;
-    height: 360px; /* 橫幅高度，可依喜好調整 */
-    overflow: hidden; /* 隱藏超出橫幅範圍的圖片 */
-}
-
-.hero-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 讓照片填滿整個橫幅，不變形 */
-    object-position: center center; /* 以照片中央為主要顯示位置 */
-    display: block;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(15, 23, 42, 0.30); /* 照片上方加淡淡的深色遮罩 */
-}
-
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* 讓文字位於圖片正中央 */
-    width: 90%;
-    text-align: center;
-    color: #ffffff;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45); /* 增加文字在照片上的清晰度 */
-}
-
-.hero-content h2 {
-    margin: 0 0 12px 0;
-    font-size: 2.6rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-}
-
-.hero-content p {
-    margin: 0 0 8px 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-}
-
-.hero-content span {
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-/* =========================================
    主要版面配置容器
 ========================================= */
 .container {
@@ -209,23 +153,6 @@ header {
     margin: 50px auto;
     padding: 0 20px;
     flex: 1; 
-}
-
-/* =========================================
-   首頁：實驗室合照
-========================================= */
-.lab-photo {
-    width: 100%; /* 合照寬度與首頁內容區塊相同 */
-    margin-bottom: 35px; /* 合照與下方卡片之間保留距離 */
-    border-radius: 16px; /* 與首頁其他卡片使用相同圓角 */
-    overflow: hidden; /* 讓圖片不會超出圓角 */
-    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08); /* 加入輕微陰影 */
-}
-
-.lab-photo img {
-    width: 100%; /* 圖片填滿合照區塊寬度 */
-    height: auto; /* 保持原始比例，避免照片被拉伸或裁切 */
-    display: block; /* 消除圖片底部預設的小空隙 */
 }
 
 /* =========================================
