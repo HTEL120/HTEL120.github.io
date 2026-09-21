@@ -171,16 +171,14 @@ header {
 }
 
 .home-brand {
+    color: #ffffff; /* 頁面最上方時，實驗室名稱顯示白色 */
     text-decoration: none;
     font-size: 1.7rem;
     font-weight: 700;
     letter-spacing: 2px;
     white-space: nowrap; /* 避免「熱傳增強實驗室」換行 */
-
-    background: linear-gradient(90deg, #991b1b, #f97316); /* 原本的深紅 → 橘色漸層 */
-    -webkit-background-clip: text; /* 讓漸層只顯示在文字裡 */
-    -webkit-text-fill-color: transparent; /* 將文字本身設透明，顯示後方漸層 */
-    background-clip: text; /* 其他支援瀏覽器使用 */
+    background: none; /* 頂端狀態不要使用漸層背景 */
+    -webkit-text-fill-color: #ffffff; /* 確保 Chrome 顯示白色文字 */
 }
 
 /* 首頁 Header 上的導覽列 */
@@ -255,6 +253,13 @@ header {
     background-color: rgba(255, 255, 255, 0.97); /* 往下滑後變成白色 Header */
     box-shadow: 0 3px 15px rgba(15, 23, 42, 0.10); /* 增加淡陰影 */
     backdrop-filter: blur(8px);
+}
+
+.home-page .home-header.scrolled .home-brand {
+    background: linear-gradient(90deg, #991b1b, #f97316); /* 下滑後變回原本深紅到橘色漸層 */
+    -webkit-background-clip: text; /* 讓漸層只顯示在文字範圍 */
+    background-clip: text; /* 其他支援瀏覽器使用 */
+    -webkit-text-fill-color: transparent; /* 讓漸層顯示在文字上 */
 }
 
 .home-page .home-header.scrolled .main-nav > ul > li > a {
