@@ -220,10 +220,12 @@ header {
 
 .home-hero-content {
     position: absolute;
-    left: 7%; /* 模仿參考網站，文字放左邊 */
-    bottom: 10%;
+    top: 18%; /* 將文字放到圖片中上方 */
+    left: 50%; /* 水平移到圖片中央 */
+    transform: translateX(-50%); /* 讓整個文字區塊真正水平置中 */
+    width: 90%; /* 避免文字在較小螢幕上太擠 */
     color: #ffffff;
-    text-align: left;
+    text-align: center; /* 三行文字全部置中 */
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65); /* 提高文字清晰度 */
 }
 
