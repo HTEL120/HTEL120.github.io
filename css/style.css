@@ -146,6 +146,128 @@ header {
 }
 
 /* =========================================
+   首頁 Header
+========================================= */
+.home-page .home-header {
+    position: fixed; /* Header 固定在畫面最上方 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: transparent; /* 頁面最上方時沒有底色 */
+    box-shadow: none;
+    backdrop-filter: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* 下滑時平順變化 */
+}
+
+.home-header-inner {
+    max-width: 1200px; /* Header 內容最大寬度 */
+    height: 82px; /* Header 高度 */
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center; /* 上下置中 */
+    justify-content: space-between; /* 左側名稱、右側選單 */
+}
+
+.home-brand {
+    color: #ffffff; /* 位於照片上時使用白色 */
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    white-space: nowrap; /* 不讓名稱換行 */
+    transition: color 0.3s ease;
+}
+
+/* 首頁 Header 上的導覽列 */
+.home-page .main-nav {
+    background-color: transparent; /* 不顯示白色底 */
+    border-bottom: none;
+}
+
+.home-page .main-nav > ul > li > a {
+    color: #ffffff; /* 初始狀態選單使用白字 */
+}
+
+.home-page .main-nav > ul > li > a:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.15); /* 滑鼠移入時淡淡透明白色 */
+}
+
+
+/* =========================================
+   首頁大型合照
+========================================= */
+.home-hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.home-hero img {
+    width: 100%;
+    height: auto; /* 完整保持 LabTeam.jpg 原始比例 */
+    display: block;
+}
+
+.home-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.22); /* 稍微壓暗照片，讓 Header 白字清楚 */
+}
+
+.home-hero-content {
+    position: absolute;
+    left: 7%; /* 模仿參考網站，文字放左邊 */
+    bottom: 10%;
+    color: #ffffff;
+    text-align: left;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65); /* 提高文字清晰度 */
+}
+
+.home-hero-content h2 {
+    margin: 0 0 8px 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.home-hero-content p {
+    margin: 0 0 5px 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.home-hero-content span {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+/* =========================================
+   首頁 Header 下滑後
+========================================= */
+.home-page .home-header.scrolled {
+    background-color: rgba(255, 255, 255, 0.97); /* 往下滑後變成白色 Header */
+    box-shadow: 0 3px 15px rgba(15, 23, 42, 0.10); /* 增加淡陰影 */
+    backdrop-filter: blur(8px);
+}
+
+.home-page .home-header.scrolled .home-brand {
+    color: #c2410c; /* 下滑後實驗室名稱改為橘紅色 */
+}
+
+.home-page .home-header.scrolled .main-nav > ul > li > a {
+    color: #475569; /* 下滑後導覽列改回深色 */
+}
+
+.home-page .home-header.scrolled .main-nav > ul > li > a:hover {
+    color: #f97316;
+    background-color: #fff7ed; /* 下滑後恢復原本橘色 hover */
+}
+
+/* =========================================
    主要版面配置容器
 ========================================= */
 .container {
