@@ -274,6 +274,56 @@ header {
 }
 
 /* =========================================
+   其他頁面 Header
+========================================= */
+.site-header {
+    position: sticky; /* 捲動頁面時固定在最上方 */
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.97); /* 其他頁面直接使用白色背景，不透明 */
+    box-shadow: 0 3px 15px rgba(15, 23, 42, 0.10); /* Header 下方淡淡陰影 */
+    backdrop-filter: blur(8px); /* 輕微毛玻璃效果 */
+    text-align: initial; /* 取消舊 Header 的全部置中 */
+}
+
+.site-header-inner {
+    max-width: 1200px; /* 與首頁 Header 使用相同寬度 */
+    height: 82px; /* 與首頁 Header 使用相同高度 */
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center; /* 上下置中 */
+    justify-content: space-between; /* 左邊實驗室名稱、右邊導覽列 */
+}
+
+.site-brand {
+    text-decoration: none;
+    font-size: 1.7rem; /* 與首頁名稱大小相同 */
+    font-weight: 700;
+    letter-spacing: 2px;
+    white-space: nowrap; /* 避免名稱換行 */
+    background: linear-gradient(90deg, #991b1b, #f97316); /* 原本深紅到橘色漸層 */
+    -webkit-background-clip: text; /* 讓漸層限制在文字內 */
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* 顯示文字漸層 */
+}
+
+.site-header .main-nav {
+    background-color: transparent; /* 不另外產生一條白色導覽列 */
+    border-bottom: none; /* 移除原本導覽列下方線條 */
+}
+
+.site-header .main-nav > ul > li > a {
+    color: #475569; /* 其他頁面導覽文字維持深灰藍色 */
+}
+
+.site-header .main-nav > ul > li > a:hover {
+    color: #f97316; /* 滑鼠移上去變橘色 */
+    background-color: #fff7ed; /* 淡橘色背景 */
+}
+
+/* =========================================
    主要版面配置容器
 ========================================= */
 .container {
