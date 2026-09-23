@@ -7,28 +7,31 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <h1>熱傳增強實驗室</h1>
+    <header class="site-header">
+        <div class="site-header-inner">
+
+            <a href="index.html" class="site-brand">熱傳增強實驗室</a> <!-- 左側網站名稱 -->
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首頁</a></li>
+                    <li><a href="news.html">最新消息</a></li>
+                    <li><a href="partners.html">合作單位</a></li>
+                    <li><a href="research.html">研究領域</a></li>
+                    <li class="dropdown">
+                        <a href="#" onclick="return false;">研究成果</a> <!-- 點擊本身不跳轉，只顯示下拉選單 -->
+                        <ul class="dropdown-content">
+                            <li><a href="achievements/journals.html">期刊論文</a></li>
+                            <li><a href="achievements/conferences.html">會議論文</a></li>
+                            <li><a href="achievements/theses.html">學位論文</a></li>
+                            <li><a href="achievements/patents.html">專利及其他</a></li>
+                            <li><a href="achievements/tech.html">技術轉移</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
         </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html">首頁</a></li>
-                <li><a href="news.html">最新消息</a></li>
-                <li><a href="partners.html">合作單位</a></li>
-                <li><a href="research.html">研究領域</a></li>
-                <li class="dropdown">
-                    <a href="#" onclick="return false;">研究成果</a> <!-- 點擊「研究成果」不跳轉頁面，只保留滑鼠移上去顯示下拉選單 -->
-                    <ul class="dropdown-content">
-                        <li><a href="achievements/journals.html">期刊論文</a></li>
-                        <li><a href="achievements/conferences.html">會議論文</a></li>
-                        <li><a href="achievements/theses.html">學位論文</a></li>
-                        <li><a href="achievements/patents.html">專利及其他</a></li>
-                        <li><a href="achievements/tech.html">技術轉移</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
     </header>
 
     <main class="container">
