@@ -526,6 +526,51 @@ header {
 }
 
 /* =========================================
+   活動／研討會照片頁面
+========================================= */
+.activity-info {
+    margin-bottom: 35px;
+    color: #64748b;
+    font-size: 1rem;
+}
+
+.activity-gallery {
+    width: 100%;
+}
+
+.activity-section {
+    margin-bottom: 60px;
+}
+
+.activity-section h3 {
+    color: #991b1b;
+    font-size: 1.35rem;
+    margin: 0 0 30px 0;
+    padding-left: 15px;
+    border-left: 5px solid #f97316;
+}
+
+.activity-photo {
+    margin: 0 0 50px 0;
+    text-align: center;
+}
+
+.activity-photo img {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.activity-photo figcaption {
+    margin-top: 12px;
+    color: #334155;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+/* =========================================
    成員頁面專屬樣式
 ========================================= */
 .member-section h3 {
