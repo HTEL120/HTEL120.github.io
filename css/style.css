@@ -659,6 +659,10 @@ header {
     object-fit: contain;
 }
 
+.partner-logo img.kyushu-logo {
+    transform: scale(0.9); /* 僅將九州大學 LOGO 縮小為原本的 90%，不影響其他 LOGO */
+}
+
 .partner-info h3 {
     margin: 0 0 8px 0;
     color: #1e293b;
