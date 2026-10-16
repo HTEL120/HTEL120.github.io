@@ -519,10 +519,10 @@ header {
     font-size: 1.05rem;
     font-weight: 500;
     text-decoration-line: underline; /* 顯示文字底線 */
-    text-decoration-style: dotted; /* 底線使用點狀虛線 */
-    text-decoration-color: #94a3b8; /* 虛線使用灰藍色 */
-    text-decoration-thickness: 1px; /* 虛線粗細 */
-    text-underline-offset: 3px; /* 虛線與文字之間的距離 */
+    text-decoration-style: dashed; /* 使用虛線，取代原本較細小的點線 */
+    text-decoration-color: #64748b; /* 虛線顏色加深 */
+    text-decoration-thickness: 2px; /* 原本 1px 改為 2px，讓虛線更明顯 */
+    text-underline-offset: 4px; /* 底線與文字距離增加至 4px */
 }
 
 .news-link:hover {
