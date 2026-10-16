@@ -515,14 +515,19 @@ header {
 }
 
 .news-link {
-    color: #334155; /* 維持與一般消息文字相同的深灰藍 */
+    color: #334155; /* 維持原本深灰藍色文字 */
     font-size: 1.05rem;
     font-weight: 500;
-    text-decoration: none; /* 平常不顯示底線 */
+    text-decoration-line: underline; /* 顯示文字底線 */
+    text-decoration-style: dotted; /* 底線使用點狀虛線 */
+    text-decoration-color: #94a3b8; /* 虛線使用灰藍色 */
+    text-decoration-thickness: 1px; /* 虛線粗細 */
+    text-underline-offset: 3px; /* 虛線與文字之間的距離 */
 }
 
 .news-link:hover {
-    color: #f97316; /* 滑鼠移到活動名稱上時變成橘色，表示可以點擊 */
+    color: #f97316; /* 滑鼠移上去時文字變橘色 */
+    text-decoration-color: #f97316; /* 虛線也跟著變橘色 */
 }
 
 /* =========================================
