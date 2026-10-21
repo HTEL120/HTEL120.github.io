@@ -702,7 +702,7 @@ footer {
 @media screen and (max-width: 768px) {
 
     /* -----------------------------------------
-       Header
+       Header：手機版改成上下排列
     ----------------------------------------- */
     .home-header-inner,
     .site-header-inner {
@@ -710,76 +710,190 @@ footer {
         height: auto;
         padding: 10px 16px;
         box-sizing: border-box;
-        flex-direction: column; /* 手機版：名稱一排、選單一排 */
+
+        display: flex;
+        flex-direction: column; /* 上面放實驗室名稱，下面放選單 */
         align-items: center;
-        gap: 5px;
+        justify-content: center;
+        gap: 6px;
     }
 
+    /* 首頁與其他頁面的實驗室名稱 */
     .home-brand,
     .site-brand {
-        font-size: 1.4rem; /* 手機版縮小實驗室名稱 */
+        font-size: 1.4rem;
         letter-spacing: 1px;
-        white-space: nowrap;
+        white-space: nowrap; /* 避免實驗室名稱換行 */
     }
 
+
+    /* -----------------------------------------
+       導覽列
+    ----------------------------------------- */
     .main-nav {
         width: 100%;
-        overflow-x: auto; /* 選單太寬時可以左右滑 */
+
+        overflow-x: auto; /* 選單超出手機寬度時可以左右滑 */
+        overflow-y: visible;
+
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
     }
 
+    /* Chrome / Safari 隱藏橫向捲軸 */
     .main-nav::-webkit-scrollbar {
-        display: none; /* 隱藏橫向捲軸 */
+        display: none;
     }
 
     .main-nav > ul {
+        display: flex;
+        flex-wrap: nowrap; /* 不讓選單換成第二排 */
         justify-content: flex-start;
-        flex-wrap: nowrap; /* 不讓選單變成直排 */
-        gap: 0;
+
         width: max-content;
         min-width: 100%;
+
+        gap: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-nav > ul > li {
+        flex-shrink: 0; /* 避免選單項目被壓縮 */
     }
 
     .main-nav > ul > li > a {
         padding: 8px 12px;
+
         font-size: 0.9rem;
-        white-space: nowrap; /* 「最新消息」保持在同一行 */
+        white-space: nowrap; /* 最新消息、合作單位等維持橫向文字 */
     }
 
 
     /* -----------------------------------------
-       首頁 Hero
+       手機版研究成果下拉選單
     ----------------------------------------- */
-    .home-hero-content {
-        top: 38%;
-        width: 92%;
+
+    /* 手機版改為跟著選單往下展開 */
+    .dropdown-content {
+        position: static;
+
+        min-width: 160px;
+        width: auto;
+
+        margin: 0;
+        padding: 5px 0;
+
+        border-radius: 8px;
+
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.10);
     }
 
-    .home-hero-content h2 {
-        font-size: 2rem; /* 原本 3.2rem，手機縮小 */
-        line-height: 1.3;
-        letter-spacing: 2px;
-        white-space: nowrap; /* 避免「熱傳增強實驗室」拆行 */
+    /* 手機點擊「研究成果」取得 focus 後顯示 */
+    .dropdown:focus-within .dropdown-content {
+        display: flex;
+        animation: fadeInDown 0.2s ease forwards;
     }
 
-    .home-hero-content p {
-        font-size: 1rem;
-        line-height: 1.5;
-        margin-top: 8px;
-    }
-
-    .home-hero-content span {
+    .dropdown-content a {
+        padding: 10px 16px;
         font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+        padding-left: 20px;
     }
 
 
     /* -----------------------------------------
-       主要內容
+       首頁 Header
+    ----------------------------------------- */
+    .home-page .home-header {
+        width: 100%;
+    }
+
+    /*
+       首頁最上方時：
+       Header 是透明的，所以名稱和選單仍維持白色
+    */
+    .home-page .home-brand {
+        color: #ffffff;
+        -webkit-text-fill-color: #ffffff;
+    }
+
+    .home-page .main-nav > ul > li > a {
+        color: #ffffff;
+    }
+
+    /*
+       往下滑後：
+       恢復深色導覽文字
+    */
+    .home-page .home-header.scrolled .main-nav > ul > li > a {
+        color: #475569;
+    }
+
+
+    /* -----------------------------------------
+       首頁 Hero 圖片
+    ----------------------------------------- */
+    .home-hero {
+        width: 100%;
+    }
+
+    .home-hero img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .home-hero-content {
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: 94%;
+
+        text-align: center;
+    }
+
+    /* 中文實驗室名稱 */
+    .home-hero-content h2 {
+        margin-bottom: 8px;
+
+        font-size: 1.9rem;
+        line-height: 1.3;
+        letter-spacing: 1px;
+
+        white-space: nowrap; /* 避免「熱傳增強實驗室」被拆行 */
+    }
+
+    /* 英文實驗室名稱 */
+    .home-hero-content p {
+        margin-bottom: 4px;
+
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    /* National Central University */
+    .home-hero-content span {
+        font-size: 0.85rem;
+    }
+
+
+    /* -----------------------------------------
+       主要內容區
     ----------------------------------------- */
     .container {
+        width: auto;
+        max-width: none;
+
         margin: 30px auto;
         padding: 0 16px;
+
+        box-sizing: border-box;
     }
 
 
@@ -787,19 +901,31 @@ footer {
        首頁卡片
     ----------------------------------------- */
     .card-grid {
-        grid-template-columns: 1fr; /* 手機版改成一欄 */
+        display: grid;
+
+        grid-template-columns: 1fr; /* 手機版全部改成單欄 */
         gap: 20px;
     }
 
     .card {
-        padding: 28px 20px;
+        width: 100%;
         min-height: auto;
+
+        padding: 28px 20px;
+
+        box-sizing: border-box;
     }
 
     .card-title {
-        font-size: 1.35rem;
+        width: 100%;
+
         margin: 0;
+
+        font-size: 1.35rem;
+        line-height: 1.5;
+
         white-space: normal;
+        word-break: keep-all; /* 中文盡量不要隨便一字一行 */
     }
 
     .text-only-card {
@@ -808,18 +934,26 @@ footer {
 
 
     /* -----------------------------------------
-       相關網站按鈕
+       首頁相關網站按鈕
     ----------------------------------------- */
     .text-only-card > div {
-        flex-wrap: wrap; /* 三個按鈕空間不足時自動換行 */
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
+
+        gap: 10px !important;
     }
 
     .text-only-card .btn-more {
         margin-top: 0;
-        padding: 8px 18px; /* 手機版縮小按鈕 */
+
+        padding: 8px 16px;
+
         font-size: 0.9rem;
-        white-space: nowrap; /* 按鈕文字不要直排 */
+
+        white-space: nowrap; /* 按鈕文字保持橫向 */
     }
 
 
@@ -827,37 +961,153 @@ footer {
        內頁白色內容區
     ----------------------------------------- */
     .page-box {
+        width: 100%;
+
         padding: 30px 20px;
+
+        box-sizing: border-box;
+
         border-radius: 12px;
+
+        min-height: auto;
     }
 
     .page-box h2 {
+        margin-bottom: 25px;
+
         font-size: 1.55rem;
+        line-height: 1.4;
     }
 
 
     /* -----------------------------------------
-       合作單位
+       最新消息頁面
+    ----------------------------------------- */
+    .news-item {
+        padding: 14px 5px;
+    }
+
+    .news-date {
+        width: auto;
+
+        margin-bottom: 5px;
+
+        font-size: 0.9rem;
+    }
+
+    .news-title,
+    .news-link {
+        font-size: 1rem;
+        line-height: 1.6;
+
+        word-break: keep-all;
+    }
+
+    /* 如果你有「查看活動照片」標籤 */
+    .news-link {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        gap: 8px;
+    }
+
+    .news-link-tag {
+        font-size: 0.78rem;
+    }
+
+
+    /* -----------------------------------------
+       成員頁面
+    ----------------------------------------- */
+    .member-group {
+        margin-left: 0;
+    }
+
+    .member-text {
+        line-height: 1.8;
+    }
+
+    .graduate-row {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 5px;
+    }
+
+
+    /* -----------------------------------------
+       合作單位頁面
     ----------------------------------------- */
     .partner-card {
         flex-direction: column;
+
         align-items: center;
+
+        padding: 25px 0;
+
         text-align: center;
     }
 
     .partner-logo {
         width: 200px;
+
         margin-right: 0;
         margin-bottom: 20px;
     }
 
+    .partner-logo img {
+        max-width: 100%;
+        max-height: 75px;
+    }
+
+    .partner-info h3 {
+        font-size: 1.15rem;
+    }
+
+    .partner-info a {
+        font-size: 0.9rem;
+
+        word-break: break-all; /* 網址太長時允許換行 */
+    }
+
 
     /* -----------------------------------------
-       活動照片
+       活動 / 研討會照片頁面
     ----------------------------------------- */
+    .activity-info {
+        margin-bottom: 25px;
+    }
+
+    .activity-section {
+        margin-bottom: 45px;
+    }
+
+    .activity-section h3 {
+        margin-bottom: 20px;
+
+        font-size: 1.2rem;
+    }
+
+    .activity-photo {
+        margin-bottom: 35px;
+    }
+
     .activity-photo img {
         width: 100%;
         max-width: 100%;
+
         height: auto;
+
+        display: block;
+        margin: 0 auto;
     }
+
+    .activity-photo figcaption {
+        margin-top: 8px;
+
+        font-size: 0.95rem;
+    }
+
 }
